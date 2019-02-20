@@ -44,7 +44,7 @@ public class Hotel {
     // Метод findRooms - знайходить кімнати за вказаними параметрами ціни та к-ть місць і виводить дані про них
     public void findRooms (int seats, int price){
         for (Room el : rooms) {
-            if (el.getSeats() == seats && el.getPrice() <= price) {
+            if (el.getSeats() == seats && el.getPrice() <= price && el.isAvailable() == true) {
                 System.out.println("Номер знайдений:");
                 System.out.println("Кімната №" + el.getNumber() + "\nКількість місць: " + el.getSeats() +
                         "\nВартість проживання: " + el.getPrice() + " грн\nОпис номера: " + el.getDescription() +
