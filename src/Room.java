@@ -1,5 +1,6 @@
 public class Room {
     // Оголошення змінних для збереження даних про номер
+    private final int number;
     private final String description;
     private final int seats;
     private final int price;
@@ -9,6 +10,7 @@ public class Room {
 
     // Конструктор за замовчуванням
     public Room() {
+        this.number = 0;
         this.description = "";
         this.seats = 0;
         this.price = 0;
@@ -18,7 +20,8 @@ public class Room {
     }
 
     // Конструктор з параметрами
-    public Room(String description, int seats, int price, boolean available, String dateOfSettled, int daysOfStaying) {
+    public Room(int number, String description, int seats, int price, boolean available, String dateOfSettled, int daysOfStaying) {
+        this.number = number;
         this.description = description;
         this.seats = seats;
         this.price = price;
@@ -28,6 +31,9 @@ public class Room {
     }
 
     // Методи геттери для полів класу
+    public int getNumber() {
+        return number;
+    }
     public String getDescription() {
         return description;
     }
