@@ -1,4 +1,6 @@
-public class Room {
+import java.io.Serializable;
+
+public class Room implements Serializable {
     // Оголошення змінних для збереження даних про номер
     private final int number;
     private final String description;
@@ -28,6 +30,15 @@ public class Room {
         this.available = available;
         this.dateOfSettled = dateOfSettled;
         this.daysOfStaying = daysOfStaying;
+    }
+
+    @Override
+    public String toString() {
+        return "Кімната №" + getNumber() + "\nДоступність: " + isAvailable() +
+        "\nКількість місць: " + getSeats() + "\nВартість проживання: " + getPrice() +
+                " грн\nОпис номера: " + getDescription() + "\nДата заселення: " + getDateOfSettled() +
+                "\nТермін проживання: " + getDaysOfStaying() + " дн.\n";
+
     }
 
     // Методи геттери для полів класу

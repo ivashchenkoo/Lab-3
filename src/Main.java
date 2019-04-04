@@ -1,3 +1,7 @@
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
         // Ініціалізація масиву об'єктів Room, який містить 15 елементів - номерів
@@ -20,12 +24,26 @@ public class Main {
 
         // Створення об'єкту Hotel в конструктор якого передається масив об'єктів Room
         Hotel hotel = new Hotel(room);
-
+        /**Lab-3**/
         // Окреме виведення вільних та зайнятих номерів
-        hotel.printRooms(true);
-        hotel.printRooms(false);
+        //hotel.printRooms(true);
+        //hotel.printRooms(false);
 
         // Пошук вільних помешкань з вказаною кількістю місць та допустимою вартістю проживання
-        hotel.findRooms(2,400);
+        //hotel.findRooms(2,400);
+
+        /**Lab-8**/
+        String fileName = "lab8.txt";
+        Room[] rooms = new Room[15];
+        Hotel hotel1 = new Hotel(rooms);
+
+        hotel.writeToFile(fileName);
+
+        hotel1.readFromFile(fileName);
+
+        hotel1.printRooms();
+
+
+
     }
 }
