@@ -3,7 +3,7 @@ import java.io.*;
 public class Hotel implements Serializable {
     // Оголошення масиву типу даних користувача Room для збереження об'єктів класу Room
     private Room[] rooms;
-    private static final long serialVersionUID = 1L;
+
 
     // Конструктор з параметром (приймає масив об'єктів класу Room)
     public Hotel(Room[] list){

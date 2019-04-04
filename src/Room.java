@@ -9,6 +9,7 @@ public class Room implements Serializable {
     private boolean available;
     private String dateOfSettled;
     private int daysOfStaying;
+    private static final long serialVersionUID = 1L;
 
     // Конструктор за замовчуванням
     public Room() {
