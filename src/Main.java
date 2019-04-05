@@ -40,7 +40,7 @@ public class Main {
         hotel.writeToFile(fileName);
 
         hotel1.readFromFile(fileName);
-
+        System.out.println();
         hotel1.printRooms();
 
 

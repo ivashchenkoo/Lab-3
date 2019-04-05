@@ -99,30 +99,22 @@ public class Hotel implements Serializable {
         FileInputStream fis = null;
         ObjectInputStream ois = null;
         int i = 0;
-        Room room = null;
-        boolean flag = true;
+
         try{
             fis = new FileInputStream(file);
-            if (fis != null){
-                ois = new ObjectInputStream(fis);
-                while (true)
-                {
-                    try{
-                        room = (Room) ois.readObject();
-                        rooms[i++] = room;
-                    }
-                    catch(Exception e){
-                        break;
-                    }
-                }
+            ois = new ObjectInputStream(fis);
+            while (fis.available() > 0)
+            {
+                Room room = (Room) ois.readObject();
+                rooms[i++] = room;
             }
         }
         catch (FileNotFoundException e) {
             System.err.println("Файл " + file.getName() + " не знайдено: " + e);
         }
-        /*catch (ClassNotFoundException e) {
+        catch (ClassNotFoundException e) {
             System.err.println("Клас не існує: " + e);
-        }*/
+        }
         catch (IOException e) {
             System.err.println("Помилка при зчитуванні даних з файлу: " + e.getMessage());
         }
